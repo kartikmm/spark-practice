@@ -1,4 +1,6 @@
-package com.practice.spark.Mapping;
+package com.practice.spark;
+
+import com.practice.spark.Mapping.Main;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

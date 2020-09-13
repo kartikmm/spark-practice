@@ -1,11 +1,11 @@
-package com.practice.spark.RDD;
+package com.practice.spark;
 
 public class IntegerWithSquareRoot {
 
 	private int originalNumber;
 	private double squareRoot;
 	
-	public IntegerWithSquareRoot(int i) {
+	public IntegerWithSquareRoot(final int i) {
 		this.originalNumber = i;
 		this.squareRoot = Math.sqrt(originalNumber);
 	}
