@@ -1,20 +1,21 @@
 package com.practice.spark.Mapping;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.practice.spark.Util;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
 	public static void main(String[] args) {
 		Logger.getLogger("org.apache").setLevel(Level.WARN);
-//        System.setProperty("hadoop.home.dir","c:/hadoop/bin");
-        System.setProperty("hadoop.home.dir","C:/Program Files/Hadoop");
+
+        Util.setSystemProperties();
 
         final List<Integer> inputData = new ArrayList<>();
 

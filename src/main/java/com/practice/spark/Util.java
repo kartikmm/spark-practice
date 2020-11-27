@@ -1,10 +1,5 @@
 package com.practice.spark;
 
-import com.practice.spark.Mapping.Main;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -27,14 +22,14 @@ public class Util
 	private static Map<String, String> corrections = new HashMap<String, String>();
 	
 	static {
-		InputStream is = Main.class.getResourceAsStream("/boringwords.txt");
-		BufferedReader br = new BufferedReader(new InputStreamReader(is));
-		br.lines().forEach(it -> borings.add(it));
-		
-		corrections.put("jav", "java");
-		corrections.put("hybernate", "hibernate");
-		corrections.put("tedius", "tedious");
-		corrections.put("install", "install");
+//		InputStream is = Main.class.getResourceAsStream("/boringwords.txt");
+//		BufferedReader br = new BufferedReader(new InputStreamReader(is));
+//		br.lines().forEach(it -> borings.add(it));
+//
+//		corrections.put("jav", "java");
+//		corrections.put("hybernate", "hibernate");
+//		corrections.put("tedius", "tedious");
+//		corrections.put("install", "install");
 	}
 
 	/**
@@ -57,9 +52,12 @@ public class Util
 	/**
 	 * We discovered some typos in our subtitles (sorry!) - any corrections will appear here
 	 */
-	public static String correct(String word)
-	{
+	public static String correct(String word) {
 		if (corrections.containsKey(word)) return corrections.get(word);
 		return word;
 	}
+
+	public static void setSystemProperties() {
+        System.setProperty("hadoop.home.dir", "C:/Program Files/Hadoop");
+    }
 }
